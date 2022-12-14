@@ -1,0 +1,28 @@
+<app-header [isNotHome]="isNotHome" [pageTitle]="pageTitle"></app-header>
+
+<ion-content>
+
+
+
+  <ion-card class="containerqr">
+    <ngx-qrcode
+      [elementType]="elementType"
+      [errorCorrectionLevel]="correctionLevel"
+      [value]="value"
+      alt="QRCodeGen"
+      cssClass="bshadow"></ngx-qrcode>
+
+      <ion-card-header>
+        <ion-button (click)="generarCodigo()">
+          <ion-icon name="qr-code"></ion-icon>
+          <ion-label>Generar codigo</ion-label>
+        </ion-button> 
+      </ion-card-header>
+
+      <ion-card-content>
+         <ion-input  readonly [(ngModel)] = "value"></ion-input>
+      </ion-card-content>
+  </ion-card>
+  
+    <app-fab-button></app-fab-button>
+</ion-content>
