@@ -71,6 +71,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/admin/admin.module').then( m => m.AdminPageModule),
     ...canActivate(() => redirectUnauthorizedTo(['/login']))
   },
+  {
+    path: 'weather',
+    loadChildren: () => import('./pages/weather/weather.module').then( m => m.WeatherPageModule)
+  },
 
 
 
