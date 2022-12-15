@@ -26,11 +26,6 @@ export class FabButtonComponent{
     this.cargarLoading('Cerrando sesion...');
     this.router.navigate(['/login'])
   }
-
-
-
-
-
   cargarLoading(message: string){
     
     this.presentLoading(message);
@@ -39,7 +34,6 @@ export class FabButtonComponent{
       this.loading.dismiss();
     }, 1000);
   }
-
   async presentLoading(message: string){
     this.loading = await this.loadingController.create({
       message,
