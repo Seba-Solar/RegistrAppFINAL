@@ -2,16 +2,49 @@
 <app-header [pageTitle]="pageTitle"></app-header>
 
 <ion-content [fullscreen]="true">
-    <ion-list>
-        <ion-item>
-            <ion-label>
-            <h1>Convertidor de Monedas</h1>
-            <br>
-            <h2>valor {{listadoMindicador.euro.codigo}}  = ${{listadoMindicador.euro.valor}}</h2>
-            <br>
-            <h2>valor {{listadoMindicador.dolar.codigo}} = ${{listadoMindicador.dolar.valor}}</h2>
-            </ion-label>
-        </ion-item>
-    </ion-list>
-    <ion-button expand="block">Convertir Monedas</ion-button>
+  <ion-list>
+      <ion-card>
+          <ion-list>
+              <ion-item>
+                  <ion-label>Selecciones divisas</ion-label>
+                  <ion-select [(ngModel)]="tipoMoneda">
+                      <ion-select-option value="dolar" type="text">DLR</ion-select-option>
+                      <ion-select-option value="euro" type="text">EUR</ion-select-option>
+                      <ion-select-option value="clp" type="text">CLP</ion-select-option>
+                  </ion-select>
+              </ion-item>
+
+              <ion-item>
+                  <ion-label position="floating">Ingresa Cantidad</ion-label>
+                  <ion-input [(ngModel)]="cantMoneda" type="number"></ion-input>
+              </ion-item>
+
+              <ion-item>
+                  <ion-label>Convertir a</ion-label>
+                  <ion-select [(ngModel)]="tipoMoneda2">
+                      <ion-select-option value="dolar" type="text">DLR</ion-select-option>
+                      <ion-select-option value="euro" type="text">EUR</ion-select-option>
+                      <ion-select-option value="clp" type="text">CLP</ion-select-option>
+                  </ion-select>
+              </ion-item>
+
+              <ion-button (click)="dolareuro()" (click)="mostrarDatosVacios()" expand="full" color="tertiary">
+                  Convertir</ion-button>
+          </ion-list>
+      </ion-card>
+      <hr>
+      <hr>
+      <div *ngIf="(valorPesos2 > 0)">
+          <ion-card>
+              <h3 id="resultado"> {{ valorPesos2 | currency: 'USD' | lowercase }}</h3>
+          </ion-card>
+      </div>
+  </ion-list>
+  <ion-item >
+      <ion-label>
+      <h2>valor {{listadoMindicador.euro.codigo}}  = ${{listadoMindicador.euro.valor}}</h2>
+      <br>
+      <h2>valor {{listadoMindicador.dolar.codigo}} = ${{listadoMindicador.dolar.valor}}</h2>
+      </ion-label>    
+  </ion-item>
 </ion-content>
