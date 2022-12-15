@@ -4,7 +4,7 @@ import { FirestoreService } from './services/firestore.service';
 import { AuthService } from './services/auth.service';
 import { Router } from '@angular/router';
 import { LoadingController } from '@ionic/angular';
-
+import { MindicatorService } from './services/mindicator.service';
 
 @Component({
   selector: 'app-root',

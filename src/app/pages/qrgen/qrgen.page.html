@@ -11,14 +11,12 @@
       [value]="value"
       alt="QRCodeGen"
       cssClass="bshadow"></ngx-qrcode>
-
       <ion-card-header>
         <ion-button (click)="generarCodigo()">
           <ion-icon name="qr-code"></ion-icon>
           <ion-label>Generar codigo</ion-label>
         </ion-button> 
       </ion-card-header>
-
       <ion-card-content>
          <ion-input  readonly [(ngModel)] = "value"></ion-input>
       </ion-card-content>

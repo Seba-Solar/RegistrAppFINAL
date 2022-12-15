@@ -1,32 +1,31 @@
 import { Component, OnInit } from '@angular/core';
+import { MindicatorService } from 'src/app/services/mindicator.service';
 
 @Component({
-  selector: 'app-coversor',
-  templateUrl: './coversor.page.html',
-  styleUrls: ['./coversor.page.scss'],
+  selector: 'app-convertor',
+  templateUrl: './covertos.page.html',
+  styleUrls: ['./covertos.page.scss'],
 })
 export class CoversorPage implements OnInit {
 
-  constructor() { }
-  pageTitle = 'Conversor';
+  pageTitle = 'Conversor de Monedas';
   isNotHome = true;
+  listadoMindicador: any=[];
+
+  constructor(private mindicatorService: MindicatorService) { }
+
   ngOnInit() {
+    this.cargarApi();
   }
 
-  async consultarApi(){
-        fetch('https://mindicador.cl/api').then(function(response) {
-        return response.json();
-    }).then(function(dailyIndicators) {
-      document.getElementById("UF").innerHTML =     dailyIndicators.uf.valor      + ' ' +   dailyIndicators.uf.nombre;
-      document.getElementById("UTM").innerHTML =    dailyIndicators.utm.valor     + ' ' +   dailyIndicators.utm.nombre;
-      document.getElementById("Dolar").innerHTML = dailyIndicators.dolar.valor   + ' ' +   dailyIndicators.dolar.nombre;
-      document.getElementById("Euro").innerHTML =   dailyIndicators.euro.valor    + ' ' +   dailyIndicators.euro.nombre;
-      document.getElementById("bt").innerHTML =     dailyIndicators.bitcoin.valor + ' ' +   dailyIndicators.bitcoin.nombre;
-  
-    }).catch(function(error) {
-        console.log('Requestfailed', error);
+  cargarApi(){
+    this.mindicatorService.getPosts()
+    .then(respuesta => {
+      this.listadoMindicador = respuesta;
+      console.log(respuesta);
+    },
+    (err) => {
+      console.log(err);
     });
   }
-
-
 }
