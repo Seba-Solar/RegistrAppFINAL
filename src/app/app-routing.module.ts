@@ -23,7 +23,6 @@ const routes: Routes = [
   { path: 'qrscan',     redirectTo: '/qrscan',     pathMatch: 'full' },
   { path: 'coversor',   redirectTo: '/coversor',   pathMatch: 'full' },
   { path: 'clima',      redirectTo: '/clima',      pathMatch: 'full' },
-  { path: 'map',        redirectTo: '/map',        pathMatch: 'full' },
   { path: '**',         redirectTo: '/e404',       pathMatch: 'full' },
 
  
@@ -65,11 +64,6 @@ const routes: Routes = [
   {
     path: 'clima',
     loadChildren: () => import('./pages/clima/clima.module').then( m => m.ClimaPageModule),
-    ...canActivate(() => redirectUnauthorizedTo(['/login']))
-  },
-  {
-    path: 'map',
-    loadChildren: () => import('./pages/map/map.module').then( m => m.MapPageModule),
     ...canActivate(() => redirectUnauthorizedTo(['/login']))
   },
   {
