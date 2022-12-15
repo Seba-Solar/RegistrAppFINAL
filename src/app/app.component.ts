@@ -19,13 +19,11 @@ export class AppComponent {
 
   public appPages = [
     { title: 'Home',       url: '/home',        icon: 'home'     },
-    { title: 'Mi Perfil',  url: '/perfil',      icon: 'person'   },
-    { title: 'Asistencia', url: '/asistencia',  icon: 'calendar' },
-    { title: 'Clima',      url: '/clima',       icon: 'sunny'    },
-    { title: 'Mapa',       url: '/map',         icon: 'map'      },
+    { title: 'Mi Perfil',  url: '/perfil',      icon: 'man'   },
+    { title: 'Asistencia', url: '/asistencia',  icon: 'school' },
+    { title: 'Clima',      url: '/weather',     icon: 'partly-sunny'    },
     { title: 'Conversor',  url: '/coversor',    icon: 'cash'     },
     { title: 'About',      url: '/about',       icon: 'alert'    },
-    { title: 'Admin',      url: '/admin',       icon: 'hammer'   },
   ];
  
   constructor(private firestore: FirestoreService,

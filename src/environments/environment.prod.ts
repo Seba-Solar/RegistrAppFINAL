@@ -1,6 +1,8 @@
 export const environment = {
   production: true,
   mapboxKey: 'pk.eyJ1IjoiY3Jpc211biIsImEiOiJjbGFpdWV4YmwwNmIzM3FsZmZ6cXJjY3RoIn0.j9_SfdTyazd_Q6hG7XK_uQ',
+  apiKey: 'c43702ee136c41c7316ff563555ef6cd',
+  apiUrl: 'https://api.openweathermap.org/data/2.5/',
   firebase: {
     projectId: 'proyecto-pgy-registrapp-10206',
     appId: '1:795878791326:web:613076a10a308468f0838f',

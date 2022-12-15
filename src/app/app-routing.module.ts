@@ -15,14 +15,13 @@ const routes: Routes = [
   { path: 'login',      component :  LoginComponent                  },
   { path: 'register',   component :  RegisterComponent               },
   { path: 'perfil',     component :  PerfilComponent                 },
-  { path: 'admin',      redirectTo: '/admin',      pathMatch: 'full' },
   { path: 'home',       redirectTo: '/home',       pathMatch: 'full' },
   { path: 'asistencia', redirectTo: '/asistencia', pathMatch: 'full' },
   { path: 'about',      redirectTo: '/about',      pathMatch: 'full' },
   { path: 'qrgen',      redirectTo: '/qrgen',      pathMatch: 'full' },
   { path: 'qrscan',     redirectTo: '/qrscan',     pathMatch: 'full' },
   { path: 'coversor',   redirectTo: '/coversor',   pathMatch: 'full' },
-  { path: 'clima',      redirectTo: '/clima',      pathMatch: 'full' },
+  { path: 'weather',    redirectTo: '/weather',  pathMatch: 'full' },
   { path: '**',         redirectTo: '/e404',       pathMatch: 'full' },
 
  
@@ -62,18 +61,9 @@ const routes: Routes = [
     ...canActivate(() => redirectUnauthorizedTo(['/login']))
   },
   {
-    path: 'clima',
-    loadChildren: () => import('./pages/clima/clima.module').then( m => m.ClimaPageModule),
-    ...canActivate(() => redirectUnauthorizedTo(['/login']))
-  },
-  {
-    path: 'admin',
-    loadChildren: () => import('./pages/admin/admin.module').then( m => m.AdminPageModule),
-    ...canActivate(() => redirectUnauthorizedTo(['/login']))
-  },
-  {
     path: 'weather',
-    loadChildren: () => import('./pages/weather/weather.module').then( m => m.WeatherPageModule)
+    loadChildren: () => import('./pages/weather/weather.module').then( m => m.WeatherPageModule),
+    ...canActivate(() => redirectUnauthorizedTo(['/login'])),
   },
 
 

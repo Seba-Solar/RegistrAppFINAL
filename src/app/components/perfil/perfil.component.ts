@@ -97,11 +97,6 @@ export class PerfilComponent implements OnInit {
       toast.present();
     }
 
-
-  //Boton info
-  btnInfo(){
-    this.presentToast('Infomacion: ','Los datos mostrados en esta página solo los verás tú, no es un perfil público.')
-  }
   //Mensaje check
   async updateToast() {
     const toast = await this.toastController.create({

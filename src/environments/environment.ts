@@ -4,6 +4,8 @@
 
 export const environment = {
   production: false,
+  apiKey: 'c43702ee136c41c7316ff563555ef6cd',
+  apiUrl: 'https://api.openweathermap.org/data/2.5/',
   mapboxKey: 'pk.eyJ1IjoiY3Jpc211biIsImEiOiJjbGFpdWV4YmwwNmIzM3FsZmZ6cXJjY3RoIn0.j9_SfdTyazd_Q6hG7XK_uQ',
   firebase: {  
     apiKey: "AIzaSyA8DKANWerSAwTT6ttIM7DDI8zRZW_kkCI",
